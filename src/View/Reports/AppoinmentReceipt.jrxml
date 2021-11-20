@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AppReceipt" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f2d3385c-0d03-48f0-93fa-6ebccfcadac7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="BillId" class="java.lang.Integer"/>
+	<parameter name="Service" class="java.lang.String"/>
+	<parameter name="Price" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.Double"/>
+	<parameter name="cash" class="java.lang.Double"/>
+	<parameter name="Balance" class="java.lang.Double"/>
+	<parameter name="SerachId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select service_details.price,service.service_Name from service_details inner join service on service_details.service_Id=service.service_Id where service_details.app_No=$P{SerachId}]]>
+	</queryString>
+	<field name="price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="service_details"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="service_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="service_Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="service_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="service"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="40" forecolor="#6426E0" backcolor="#FFFFFF" uuid="7c4ba77e-fe3e-4389-a08f-68e569c72281"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="15"/>
+				</textElement>
+				<text><![CDATA[Gents Saloon]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="30" uuid="ec0f48b6-0c45-49d5-8817-b27827f0acbc"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Bill No :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="0" width="100" height="30" uuid="71b50dfd-7708-48da-99b1-b49de86a4ef4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BillId}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="227" y="0" width="123" height="30" uuid="94225241-50f7-4624-850b-efb2fb3456d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="430" y="0" width="125" height="30" uuid="3e89906e-eafe-4929-926d-ea0b6c420d50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="50">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="180" height="46" uuid="c3b33baa-4e85-46d6-a77a-5b152be80b20">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97fd7110-f143-4573-895f-040edc2000c6"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{service_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="45" uuid="9101f12a-c899-4496-a21f-65061312a167">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fd15eec0-dca3-479a-a482-6035ab8a682d"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="170">
+			<staticText>
+				<reportElement x="0" y="140" width="380" height="30" uuid="a29c705d-0ea0-4dfa-a04e-20def88b2b7d"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Thank you and hope you will come back again]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="5750ece7-c4cb-4931-aa7d-86dcc68c3bd5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="30" uuid="e52316df-559c-40af-9385-e482dea158fa"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="100" height="30" uuid="e98f4197-201f-44ed-ad6f-11cc08e3b2ea"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Amount Payed :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="50" width="100" height="30" uuid="6550db56-819f-4f96-b3db-4b1855e40bfd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cash}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="90" width="380" height="1" forecolor="#30E6E6" uuid="4aff7def-28a3-4df5-80c6-d888b256d280"/>
+			</rectangle>
+			<textField>
+				<reportElement x="280" y="100" width="100" height="30" uuid="265f8378-46af-4ff2-a92c-4c0fb2f3c20a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Balance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="100" width="100" height="30" uuid="46e5c335-d131-404a-b50b-f61f72804fea"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Balance :]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="-11" y="0" width="401" height="140" uuid="84ee7ad3-e9fc-4c28-807c-afbb60177191"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

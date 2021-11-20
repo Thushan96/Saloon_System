@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MyStackPane" prefHeight="340.0" prefWidth="517.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddItemFormController">
+   <children>
+      <StackPane fx:id="mystacPane" prefHeight="342.0" prefWidth="517.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../Saloon.css">
+               <children>
+                  <JFXTextField fx:id="txtItemId" layoutX="142.0" layoutY="25.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="36.0" prefWidth="234.0" promptText="Item ID" unFocusColor="#ee1212">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemName" layoutX="142.0" layoutY="89.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="36.0" prefWidth="234.0" promptText="Item Name" unFocusColor="#5713ed">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemPrice" layoutX="142.0" layoutY="153.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="36.0" prefWidth="234.0" promptText="Item Price" unFocusColor="#5713ed">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtQtyOnHand" layoutX="142.0" layoutY="217.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="36.0" prefWidth="234.0" promptText="Quantity On Hand" unFocusColor="#5713ed">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnSave" alignment="CENTER" buttonType="RAISED" layoutX="381.0" layoutY="277.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="122.0" styleClass="okayBtn-Color" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnClear" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="224.0" layoutY="276.0" onAction="#ClearOnAction" prefHeight="44.0" prefWidth="122.0" styleClass="backBtn-colorBackground" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SAVE" layoutX="478.0" layoutY="305.0" size="20" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="RECYCLE" layoutX="310.0" layoutY="307.0" size="20" text="" />
+               </children>
+               <styleClass>
+                  <String fx:value="backgroundColour" />
+                  <String fx:value="button" />
+               </styleClass>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

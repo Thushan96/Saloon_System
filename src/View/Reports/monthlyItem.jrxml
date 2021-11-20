@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="monthlyItem" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f0efd59-f83e-4c5b-8259-9e39036110c6">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT extract(MONTH FROM(date)) ,sum(price)  FROM order_detail GROUP BY  extract(Month FROM(date))]]>
+	</queryString>
+	<field name="extract(MONTH FROM(date))" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="extract(MONTH FROM(date))"/>
+		<property name="com.jaspersoft.studio.field.label" value="extract(MONTH FROM(date))"/>
+	</field>
+	<field name="sum(price)" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="sum(price)"/>
+		<property name="com.jaspersoft.studio.field.label" value="sum(price)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="555" height="40" uuid="3c693632-7b02-42f0-8885-cea0c7e1f682"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="15"/>
+				</textElement>
+				<text><![CDATA[Item wise Monthly Income Reports]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="371">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="-20" y="6" width="555" height="318" uuid="7d8f2ee0-39a7-4da0-b092-e715107cd274"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{extract(MONTH FROM(date))}]]></keyExpression>
+					<valueExpression><![CDATA[$F{sum(price)}]]></valueExpression>
+					<labelExpression><![CDATA[$F{extract(MONTH FROM(date))}]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<frame>
+				<reportElement x="380" y="171" width="200" height="200" uuid="00b13b05-297c-406c-bc2a-f3595614e245"/>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="371" uuid="d6b3452c-c78e-4b8f-83c5-346e53fb2847"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</frame>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="10" width="100" height="20" uuid="29150d14-3320-45b5-b499-aadb11ee46a2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="150" y="10" width="100" height="20" uuid="5418961e-fd23-410d-8dc1-0810bea06c71"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

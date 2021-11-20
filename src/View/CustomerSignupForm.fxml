@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="302.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerSignupFormController">
+   <children>
+      <StackPane fx:id="MyStackPane" prefHeight="309.0" prefWidth="549.0">
+         <children>
+            <Pane prefHeight="317.0" prefWidth="556.0" styleClass="backgroundColour" stylesheets="@../Saloon.css">
+               <children>
+                  <JFXTextField fx:id="txtNic" layoutX="204.0" layoutY="48.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="39.0" prefWidth="237.0" promptText="National Identity Card Number" style="-fx-background-color: white;">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></JFXTextField>
+                  <Label layoutX="104.0" layoutY="48.0" prefHeight="39.0" prefWidth="88.0" text="NIC No :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="104.0" layoutY="114.0" prefHeight="39.0" prefWidth="88.0" text="Name :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtName" layoutX="204.0" layoutY="114.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="39.0" prefWidth="237.0" promptText="Your name" style="-fx-background-color: white;">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></JFXTextField>
+                  <Label layoutX="104.0" layoutY="180.0" prefHeight="39.0" prefWidth="88.0" text="Age :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtAge" layoutX="204.0" layoutY="180.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="39.0" prefWidth="237.0" promptText="Your age" style="-fx-background-color: white;">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></JFXTextField>
+                  <JFXButton fx:id="btnSave" alignment="CENTER" buttonType="RAISED" layoutX="393.0" layoutY="245.0" onAction="#SaveOnAction" prefHeight="44.0" prefWidth="122.0" styleClass="okayBtn-Color" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="228.0" layoutY="245.0" onAction="#ClearOnAction" prefHeight="44.0" prefWidth="122.0" styleClass="backBtn-colorBackground" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SAVE" layoutX="482.0" layoutY="273.0" size="20" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="RECYCLE" layoutX="314.0" layoutY="275.0" size="19" text="" wrappingWidth="17.142850160598755" />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

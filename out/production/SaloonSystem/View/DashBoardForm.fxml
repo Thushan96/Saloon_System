@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="ap" prefHeight="579.0" prefWidth="959.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardFormController">
+   <children>
+      <ImageView fitHeight="579.0" fitWidth="1029.0" layoutX="-70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Asserts/new%20img.jpg" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="prograssBar" layoutX="45.0" layoutY="539.0" prefHeight="18.0" prefWidth="823.0" progress="0.0" />
+      <ProgressIndicator fx:id="prograssind" layoutX="882.0" layoutY="540.0" prefHeight="34.0" prefWidth="22.0" progress="0.0" stylesheets="@../Saloon.css" />
+      <Label layoutX="45.0" layoutY="516.0" prefHeight="17.0" prefWidth="182.0" text="Loading Please be patient......" textFill="#1de127" />
+   </children>
+</AnchorPane>

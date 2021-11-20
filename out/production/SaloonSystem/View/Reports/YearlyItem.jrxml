@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="YearlyItem" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="629b2937-456b-4890-bac8-1f8d4b466c85">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT extract(YEAR FROM(date)) ,sum(price)  FROM order_detail GROUP BY  extract(YEAR FROM(date))]]>
+	</queryString>
+	<field name="extract(YEAR FROM(date))" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="extract(YEAR FROM(date))"/>
+		<property name="com.jaspersoft.studio.field.label" value="extract(YEAR FROM(date))"/>
+	</field>
+	<field name="sum(price)" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="sum(price)"/>
+		<property name="com.jaspersoft.studio.field.label" value="sum(price)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="555" height="40" uuid="42f90902-ef7d-46ff-8d2f-ed8e26bf0431"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="15"/>
+				</textElement>
+				<text><![CDATA[Item wise Yearly Income Reports]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="294" splitType="Stretch">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="555" height="294" uuid="6ef2ad4c-6daa-442f-b22b-784fcdbdc1c6"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{extract(YEAR FROM(date))}]]></keyExpression>
+					<valueExpression><![CDATA[$F{sum(price)}]]></valueExpression>
+					<labelExpression><![CDATA[$F{extract(YEAR FROM(date))}]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="294" uuid="c6c2dcd3-04c6-4d24-906e-2d4606242527"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="10" width="100" height="20" uuid="5b551e93-79d8-4a24-829b-cc7bc2404bb6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="150" y="10" width="100" height="20" uuid="4983e231-8b01-4d13-b304-bb15cf83c3c6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

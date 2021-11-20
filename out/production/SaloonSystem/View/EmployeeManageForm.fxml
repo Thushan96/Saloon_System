@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="507.0" prefWidth="860.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EmployeeManageFormController">
+   <children>
+      <StackPane fx:id="MyStackPane" layoutX="-1.0" layoutY="-2.0" prefHeight="557.0" prefWidth="860.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="860.0" stylesheets="@../Saloon.css">
+               <children>
+                  <JFXTextField fx:id="txtEmpID" focusColor="#510dee" layoutX="25.0" layoutY="22.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="34.0" prefWidth="188.0" promptText="Employee ID" style="-fx-background-color: WHITE;" unFocusColor="#f50707" />
+                  <JFXTextField fx:id="txtEmpName" focusColor="#510dee" layoutX="361.0" layoutY="22.0" onKeyReleased="#textFields_Key_Changed" prefHeight="34.0" prefWidth="200.0" promptText="Employee Name" style="-fx-background-color: WHITE;" unFocusColor="#07f572" />
+                  <JFXTextField fx:id="txtEmpRole" focusColor="#510dee" layoutX="650.0" layoutY="22.0" onKeyReleased="#textFields_Key_Changed" prefHeight="34.0" prefWidth="188.0" promptText="Employee Role" style="-fx-background-color: WHITE;" unFocusColor="#07f572" />
+                  <JFXTextField fx:id="txtEmpAddress" focusColor="#510dee" layoutX="326.0" layoutY="82.0" onKeyReleased="#textFields_Key_Changed" prefHeight="34.0" prefWidth="256.0" promptText="Employee Address" style="-fx-background-color: WHITE;" unFocusColor="#f50707" />
+                  <JFXTextField fx:id="txtEmpSalary" focusColor="#510dee" layoutX="638.0" layoutY="82.0" onKeyReleased="#textFields_Key_Changed" prefHeight="34.0" prefWidth="200.0" promptText="Employee Basic Salary" style="-fx-background-color: WHITE;" unFocusColor="#f50707" />
+                  <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="221.0" layoutY="22.0" onAction="#SearchOnAction" prefHeight="34.0" prefWidth="86.0" styleClass="okayBtn-Color" text="Search" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="288.0" layoutY="45.0" size="18" />
+                  <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="544.0" layoutY="142.0" onAction="#UpdateOnAction" prefHeight="34.0" prefWidth="94.0" styleClass="backBtn-colorBackground" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="WRENCH" layoutX="613.0" layoutY="165.0" size="18" />
+                  <TableView fx:id="tblEmployee" layoutX="18.0" layoutY="187.0" prefHeight="360.0" prefWidth="820.0">
+                    <columns>
+                      <TableColumn fx:id="colId" prefWidth="123.0" text="Employee ID" />
+                      <TableColumn fx:id="colName" prefWidth="166.0" text="Employee Name" />
+                        <TableColumn fx:id="colContact" prefWidth="163.0" text="Employee Contact" />
+                        <TableColumn fx:id="colAddress" prefWidth="180.0" text="Employee Address" />
+                        <TableColumn fx:id="colSalary" prefWidth="187.0" text="Employee Salary" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="716.0" layoutY="140.0" onAction="#deleteOnAction" prefHeight="34.0" prefWidth="94.0" styleClass="buttonColour2" stylesheets="@../Saloon.css" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="315.0" layoutY="140.0" onAction="#AddEmployeeOnAction" prefHeight="34.0" prefWidth="94.0" styleClass="okayBtn-Color" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="BITBUCKET" layoutX="786.0" layoutY="163.0" size="18" text="" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="325.0" layoutY="163.0" size="18" />
+                  <JFXTextField fx:id="txtEmpContact" focusColor="#510dee" layoutX="25.0" layoutY="82.0" onKeyReleased="#textFields_Key_Changed" prefHeight="34.0" prefWidth="210.0" promptText="Employee  Contact No" style="-fx-background-color: WHITE;" unFocusColor="#07f572" />
+                  <JFXTextField fx:id="txtEmpPassword" focusColor="#510dee" layoutX="25.0" layoutY="142.0" onKeyReleased="#textFields_Key_Changed" prefHeight="34.0" prefWidth="200.0" promptText="Employee Password" style="-fx-background-color: WHITE;" unFocusColor="#f50707" />
+               </children>
+               <styleClass>
+                  <String fx:value="backgroundColour" />
+                  <String fx:value="button" />
+                  <String fx:value="text-field2" />
+               </styleClass>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

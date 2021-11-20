@@ -1,0 +1,66 @@
+.backgroundColour{
+    -fx-background-color: linear-gradient(to right top,#00F260,#0575E6);
+}
+.text-field1{
+    -fx-text-fill: gold;
+}
+.text-field{
+    -fx-text-fill: #1B1464;
+}
+.combo-box .cell{
+    -fx-text-fill: blue;
+    -fx-font: 16px "Arial";
+}
+.text-field2{
+    -fx-text-fill: red;
+}
+.text-color{
+    -fx-text-fill: linear-gradient(to right,#1B1464,#1B1464);
+}
+.buttonColour2{
+    -fx-background-color:linear-gradient( to right top,#0984e3,#00cec9,#ffeaa7);
+}
+
+.backBtn-colorBackground{
+    -fx-background-color: linear-gradient( to right top,#facd68, #fc76b3,#ff7675);
+}
+.okayBtn-Color{
+    -fx-background-color: linear-gradient( to right bottom,orange,#fdcb6e,#0984e3);
+    -fx-border-radius: 50%;
+}
+
+.Transparent{
+-fx-background-color: transparent;
+    -fx-border-color:  ivory;
+}
+
+.gradient-text {
+    background-image: linear-gradient(#E21143, #FFB03A);
+    background-clip: text;
+}
+.combobox-prompt-Text{
+    -fx-prompt-text-fill:maroon;
+}
+.jfx-button{
+    -fx-border-radius: 15pt;
+    -fx-background-radius: 15pt;
+}
+.text-area {
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
+
+    /* top-left, top-right, bottom-right, and bottom-left corners, in that
+    order. */
+}
+.newBtn-Color{
+    -fx-background-color: linear-gradient( to right bottom,orange,#00cec9,#0984e3);
+    -fx-border-radius: 50%;
+}
+.button:hover{
+    -fx-text-fill: #00F260;
+    -fx-cursor: hand;
+}
+.glyph-icon{
+    -fx-fill: white;
+}
+

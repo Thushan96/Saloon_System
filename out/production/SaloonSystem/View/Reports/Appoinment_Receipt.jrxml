@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Appoinment_Receipt" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1249f5fa-acaf-4af7-8ed8-2105765b70e4">
+	<parameter name="AppNo" class="java.lang.String"/>
+	<parameter name="Nic" class="java.lang.String"/>
+	<parameter name="Parameter1" class="java.lang.String"/>
+	<parameter name="EmpId" class="java.lang.String"/>
+	<parameter name="Price" class="java.lang.Double"/>
+	<parameter name="Discount" class="java.lang.Double"/>
+	<parameter name="ServiceName" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="30" backcolor="#C3EBEA" uuid="362525b2-f94e-407b-a89a-ab043c3f9860"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="20" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Receipt]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="300" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="180" height="30" uuid="576356a8-ac21-4fae-9d55-2a795a45687e"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Appoinment No :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="20" width="100" height="30" uuid="6065b8b0-b4e5-405f-822c-1eecac063974"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AppNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="70" width="140" height="30" uuid="a8e8afaf-7fad-4158-8921-cdb8a6200775"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Customer NIC :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="140" height="30" uuid="b8a75860-eb5c-4585-9940-f8caffb301fa"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Emloyee ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="140" height="30" uuid="4f9cac72-5052-4759-ae32-3a078e4b9298"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Discount :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="220" width="140" height="30" uuid="1bd7ce05-5cdf-4796-bfad-88fe629e0a91"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Service :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="270" width="140" height="30" uuid="4f82758d-152d-40ff-8869-6a510e4a248c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="70" width="100" height="30" uuid="e2796b90-d710-48fa-8634-719280c26b5c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Nic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="120" width="100" height="30" uuid="bf8cecb9-26cb-4762-909c-1894b8e868a0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EmpId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="270" width="100" height="30" uuid="1753b86a-7b9f-4197-a2f7-d2358f3f703b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="170" width="100" height="30" uuid="d901447c-bacc-42d2-ad35-1c55c0e86d61"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="220" width="320" height="30" uuid="af681626-e23f-45fc-83ff-5971e9c197ff"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ServiceName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+</jasperReport>

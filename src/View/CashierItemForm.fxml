@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="860.0" style="-fx-background-color: #74b9ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CashierItemFormController">
+   <children>
+      <StackPane fx:id="MyStackPane" prefHeight="513.0" prefWidth="772.0">
+         <children>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="860.0" stylesheets="@../Saloon.css">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="88.0" text="Order ID :">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOrderId" layoutX="93.0" layoutY="14.0" prefHeight="32.0" prefWidth="66.0" text="O-001">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtItemName" editable="false" layoutX="298.0" layoutY="67.0" prefHeight="30.0" prefWidth="197.0" promptText="Item Name" styleClass="text-color" stylesheets="@../Saloon.css" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemQtyOnHand" editable="false" layoutX="555.0" layoutY="67.0" prefHeight="30.0" prefWidth="155.0" promptText="Quantity On Hand" styleClass="text-color" stylesheets="@../Saloon.css" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtPrice" editable="false" layoutX="16.0" layoutY="123.0" prefHeight="30.0" prefWidth="131.0" promptText="Price" styleClass="text-color" stylesheets="@../Saloon.css" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnAddToList" alignment="BOTTOM_CENTER" layoutX="701.0" layoutY="115.0" onAction="#AddToListOnAction" prefHeight="47.0" prefWidth="131.0" style="-fx-background-radius: 50;" styleClass="backBtn-colorBackground" stylesheets="@../Saloon.css" text="Add To List" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" layoutX="748.0" layoutY="132.0" size="20" text="" />
+                  <TableView fx:id="tblItem" layoutX="6.0" layoutY="167.0" prefHeight="280.0" prefWidth="842.0">
+                    <columns>
+                      <TableColumn fx:id="colItemCode" prefWidth="134.0" text="Item Code" />
+                      <TableColumn fx:id="colItemName" prefWidth="125.0" text="Item Name" />
+                        <TableColumn fx:id="colUnitPrice" prefWidth="152.0" text="Unit Price" />
+                        <TableColumn fx:id="colQuantity" prefWidth="117.0" text="Quantity" />
+                        <TableColumn fx:id="colTotal" prefWidth="188.0" text="Total" />
+                        <TableColumn fx:id="colBtn" prefWidth="125.0" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="btnPay" layoutX="710.0" layoutY="458.0" onAction="#PayOnAction" prefHeight="40.0" prefWidth="122.0" style="-fx-background-radius: 50;" styleClass="okayBtn-Color" stylesheets="@../Saloon.css" text="Pay" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="MONEY" layoutX="792.0" layoutY="486.0" size="20" text="" />
+                  <Label layoutX="15.0" layoutY="461.0" prefHeight="30.0" prefWidth="66.0" text="Total :" textFill="#d63031">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTotal" layoutX="81.0" layoutY="461.0" prefHeight="30.0" prefWidth="148.0" text="00.00" textFill="#d63031">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtQuantity" layoutX="223.0" layoutY="123.0" onKeyReleased="#textKeyPressed" prefHeight="30.0" prefWidth="131.0" promptText="Quantity" styleClass="text-color" stylesheets="@../Saloon.css" unFocusColor="RED">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtItemCode" layoutX="16.0" layoutY="67.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="30.0" prefWidth="162.0" promptText="Item Code" styleClass="text-color" stylesheets="@../Saloon.css" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnSearch" alignment="TOP_LEFT" buttonType="RAISED" layoutX="185.0" layoutY="64.0" onAction="#searchOnAction" prefHeight="37.0" prefWidth="88.0" style="-fx-border-radius: 75;" styleClass="okayBtn-Color" stylesheets="@../Saloon.css" text="Search" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="247.0" layoutY="89.0" size="20" wrappingWidth="18.571428298950195" />
+                  <JFXTextField fx:id="txtAmount" layoutX="273.0" layoutY="459.0" onKeyReleased="#textFeildKeyChange" prefHeight="34.0" prefWidth="183.0" promptText="Amount Given" style="-fx-background-color: white;" styleClass="text-color" stylesheets="@../Saloon.css" unFocusColor="#d01623">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+               <styleClass>
+                  <String fx:value="backgroundColour" />
+                  <String fx:value="button" />
+               </styleClass>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

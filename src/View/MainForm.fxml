@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainFormController">
+   <children>
+      <StackPane fx:id="MystackPane" layoutX="-9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="959.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="959.0" stylesheets="@../Saloon.css">
+               <children>
+                  <JFXButton fx:id="btnLogin" alignment="BOTTOM_CENTER" buttonType="RAISED" layoutX="815.0" layoutY="11.0" onAction="#logInOnAction" prefHeight="44.0" prefWidth="91.0" styleClass="backBtn-colorBackground" stylesheets="@../Saloon.css" text="LogIn" textFill="WHITE" AnchorPane.leftAnchor="815.0" AnchorPane.rightAnchor="31.0">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="865.0" layoutY="28.0" size="20" AnchorPane.rightAnchor="81.1428575515747" />
+                  <Label layoutX="41.0" layoutY="63.0" prefHeight="31.0" prefWidth="316.0" text="If you are a new customer click" textFill="#dd0c41" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="610.0">
+                     <font>
+                        <Font name="Arial Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnSignUp" buttonType="RAISED" layoutX="347.0" layoutY="60.0" onAction="#SignUpOnAction" prefHeight="37.0" prefWidth="125.0" stylesheets="@../Saloon.css" text="Sign Up" textFill="WHITE" AnchorPane.leftAnchor="347.0" AnchorPane.rightAnchor="503.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="backBtn-colorBackground" />
+                        <String fx:value="actionIcon" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXTextField fx:id="txtNic" layoutX="25.0" layoutY="136.0" onKeyReleased="#textFields_Key_Pressed" prefHeight="37.0" prefWidth="326.0" promptText="Enter Your NIC Number" style="-fx-background-color: white;" styleClass="text-area" unFocusColor="#f80d0d" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="608.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnSearch" alignment="TOP_LEFT" buttonType="RAISED" layoutX="370.0" layoutY="136.0" onAction="#SearchOnAction" prefHeight="37.0" prefWidth="104.0" styleClass="okayBtn-Color" stylesheets="@../Saloon.css" text="Search" textFill="WHITE" AnchorPane.rightAnchor="501.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <FontAwesomeIconView fx:id="searchLogo" fill="WHITE" glyphName="SEARCH" layoutX="419.0" layoutY="161.0" size="20" text="" />
+                  <Label fx:id="lblName" alignment="CENTER" layoutX="638.0" layoutY="176.0" prefHeight="20.0" prefWidth="120.0" text="Your name :" textFill="WHITE" AnchorPane.rightAnchor="199.0">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="cmbService" layoutX="25.0" layoutY="260.0" onAction="#SelectServiceOnAction" prefHeight="37.0" prefWidth="326.0" promptText="Select service" style="-fx-background-color: white;" stylesheets="@../Saloon.css" unFocusColor="#461ed6" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="608.0">
+                     <styleClass>
+                        <String fx:value="my-list-cell" />
+                        <String fx:value="cell" />
+                        <String fx:value="combobox-prompt-Text" />
+                     </styleClass>
+                  </JFXComboBox>
+                  <JFXButton fx:id="btnplus" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" layoutX="370.0" layoutY="259.0" onAction="#BtnPlusOnAction" prefHeight="39.0" prefWidth="39.0" styleClass="newBtn-Color" text="+" textFill="WHITE" AnchorPane.rightAnchor="550.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXComboBox fx:id="cmbService2" layoutX="25.0" layoutY="327.0" onAction="#SelectServiceOnAction2" prefHeight="37.0" prefWidth="326.0" promptText="Select service" style="-fx-background-color: white;" stylesheets="@../Saloon.css" unFocusColor="#461ed6" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="608.0">
+                     <styleClass>
+                        <String fx:value="my-list-cell" />
+                        <String fx:value="combobox-prompt-Text" />
+                     </styleClass></JFXComboBox>
+                  <Label fx:id="lblService" alignment="CENTER" layoutX="630.0" layoutY="225.0" prefHeight="37.0" prefWidth="125.0" text="Last Service :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnMakeAppoinment" alignment="TOP_LEFT" buttonType="RAISED" layoutX="294.0" layoutY="461.0" onAction="#MakeAppoinmentOnAction" prefHeight="37.0" prefWidth="184.0" styleClass="okayBtn-Color" stylesheets="@../Saloon.css" text="Make Appoinment" textFill="WHITE" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="489.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <ImageView fitHeight="301.0" fitWidth="333.0" layoutX="607.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Asserts/bloggif_61332c2fd6b6b.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="54.0" fitWidth="590.0" layoutX="154.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Asserts/text.gif" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="726.0" layoutY="76.0" prefHeight="34.0" prefWidth="63.0" text="Date :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" layoutX="787.0" layoutY="76.0" prefHeight="34.0" prefWidth="125.0" text="04.09.2021" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtTotal" editable="false" layoutX="88.0" layoutY="386.0" prefHeight="37.0" prefWidth="144.0" stylesheets="@../Saloon.css" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-field2" />
+                        <String fx:value="text-area" />
+                     </styleClass>
+                  </JFXTextField>
+                  <Label layoutX="25.0" layoutY="103.0" prefHeight="21.0" prefWidth="387.0" text="Enter Your NIC number to make appoinment" textFill="#6012e8">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtname" alignment="BOTTOM_LEFT" editable="false" layoutX="755.0" layoutY="171.0" prefHeight="39.0" prefWidth="144.0" styleClass="text-field" stylesheets="@../Saloon.css" unFocusColor="#0b8cd7">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtService" alignment="BOTTOM_LEFT" editable="false" layoutX="755.0" layoutY="225.0" prefHeight="38.0" prefWidth="201.0" styleClass="text-field" stylesheets="@../Saloon.css" unFocusColor="#0b8cd7">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label fx:id="lblAppNo" alignment="CENTER" layoutX="590.0" layoutY="129.0" prefHeight="30.0" prefWidth="167.0" text="Appoinment No :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtAppoinmentNo" alignment="BOTTOM_LEFT" editable="false" layoutX="755.0" layoutY="125.0" prefHeight="39.0" prefWidth="144.0" styleClass="text-field" stylesheets="@../Saloon.css" text="A001" unFocusColor="#0b8cd7">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="cmbServicePerson" layoutX="25.0" layoutY="191.0" onAction="#SelectServicePersonOnAction" prefHeight="39.0" prefWidth="324.0" promptText="Select service person" style="-fx-background-color: white;" stylesheets="@../Saloon.css" unFocusColor="#461ed6">
+                     <styleClass>
+                        <String fx:value="my-list-cell" />
+                        <String fx:value="cell" />
+                        <String fx:value="text-color" />
+                        <String fx:value="combobox-prompt-Text" />
+                     </styleClass>
+                  </JFXComboBox>
+                  <JFXButton fx:id="btnCancelAppoinment" alignment="TOP_LEFT" buttonType="RAISED" layoutX="22.0" layoutY="461.0" onAction="#CancelAppoinmentOnAction" prefHeight="37.0" prefWidth="175.0" styleClass="buttonColour2" stylesheets="@../Saloon.css" text="Cancel Appoinment" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label fx:id="lblTotal" layoutX="25.0" layoutY="391.0" prefHeight="34.0" prefWidth="70.0" text="Total :" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTime" layoutX="562.0" layoutY="77.0" prefHeight="34.0" prefWidth="125.0" text="00 : 00: 00" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="497.0" layoutY="76.0" prefHeight="34.0" prefWidth="70.0" text="Time :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="backgroundColour" />
+                  <String fx:value="button" />
+                  <String fx:value="glyph-icon" />
+               </styleClass>
+            </AnchorPane>
+         </children></StackPane>
+   </children>
+</AnchorPane>
